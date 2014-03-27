@@ -23,9 +23,13 @@ $type = Witi::parseUrl('type');
     </head>
     <body>
         <header class="main">
-            <a href="/">
+            <?php if (!isset($type)) { ?>
+                <a href="/">
+                    <h1 class="logo">Witi</h1>
+                </a>
+            <?php } else { ?>
                 <h1 class="logo">Witi</h1>
-            </a>
+                <?php }; ?>
         </header>
         
         <div class="container">
