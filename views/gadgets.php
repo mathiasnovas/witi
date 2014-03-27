@@ -27,8 +27,15 @@ $gadgets = Witi::fetchGadgets();
             <h3 class="title"><?php print $gadget['name']; ?></h3>
         </li>
     <?php } ?>
-    <li class="col-md-2 col-sm-4 col-xs-6 last">
-        <button class="add-gadget-trigger"><i class="glyphicon glyphicon-plus"></i></button>
+    <li class="col-md-2 col-sm-4 col-xs-6 person add">
+        <a class="add-gadget-trigger">
+            <figure class="image">
+                <img src="img/white_bg.jpg" alt="">
+            </figure>
+            <div class="icon-wrapper">
+                <i class="glyphicon glyphicon-plus"></i>
+            </div>
+        </a>
     </li>
 </ul>
 

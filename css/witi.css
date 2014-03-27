@@ -122,6 +122,21 @@ h4, .delta {
             overflow: hidden;
             text-overflow: ellipsis;
         }
+    .list .add .image {
+        border: 2px solid #0589CD;
+        cursor: pointer;
+    }
+    .list .add .icon-wrapper {
+        cursor: pointer;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+    .list .add i {
+        top: 45%;
+    }
 
 header.main {
 	background-color: #F1F0F0;
@@ -212,7 +227,6 @@ nav.main a {
         margin-top: 10px;
         width: 100%;
     }
-
     .person.full h4 {
         border-bottom: 1px solid #eee;
         padding-bottom: 10px;

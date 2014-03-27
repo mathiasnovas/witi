@@ -10,7 +10,7 @@ $rank = witi::getRank($id);
 ?>
 
 <article class="person full" data-id="<?php print $person['id']; ?>">
-    <div class="col-lg-4 col-lg-offset-2 left">
+    <div class="col-sm-4 col-sm-offset-2 left">
         <?php if ($person['image']) { ?>
             <figure class="image">
                 <img src="storage/large/<?php print $person['image']; ?>" alt="">
@@ -19,7 +19,7 @@ $rank = witi::getRank($id);
 
         <h1>#<?php print $rank . ' '; print $person['name']; ?></h1>
     </div>
-    <div class="col-lg-3 col-lg-offset-1">
+    <div class="col-sm-3 col-sm-offset-1">
         <div class="box">
             <h4>In posession of</h4>
             
