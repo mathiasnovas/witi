@@ -12,7 +12,7 @@ $type   = witi::parseUrl('type');
             <br>
             <?php 
                 if (isset($type)) {
-                    $gadgets = Witi::fetchGadgetById($person['id']);
+                    $gadgets = Witi::fetchGadgetsById($person['id']);
                     if ($gadgets) {
                         foreach ($gadgets as $gadget) {
                             if ($gadget['id'] == $type) {
@@ -21,7 +21,7 @@ $type   = witi::parseUrl('type');
                         }
                     }
                 } else {
-                    $gadgets = Witi::fetchGadgetById($person['id']);
+                    $gadgets = Witi::fetchGadgetsById($person['id']);
                     if ($gadgets) {
                         foreach ($gadgets as $gadget) {
                             print $gadget['name'];

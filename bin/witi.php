@@ -61,4 +61,11 @@ class Witi {
         return $result;
     }
 
+    public static function fetchPeopleById ($id) {
+        $query = 'SELECT * FROM people WHERE id="' . $id . '"';
+        $result = self::fetch($query);
+
+        return $result;
+    }
+
 }
