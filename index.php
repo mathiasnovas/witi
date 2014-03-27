@@ -29,21 +29,22 @@ $type = Witi::parseUrl('type');
         </header>
         
         <div class="container">
-            
-            <nav class="row main">
-                <div class="col-sm-6 col-sx-12">
-                    <a href="#" class="people-button">
-                        <i class="glyphicon glyphicon-user"></i>
-                        People
-                    </a>
-                </div>
-                <div class="col-sm-6 col-sx-12">
-                    <a href="#" class="gadgets-button">
-                        <i class="glyphicon glyphicon-phone"></i>
-                        Gadgets
-                    </a>
-                </div>
-            </nav>
+            <?php if (!isset($type)) { ?>
+                <nav class="row main">
+                    <div class="col-sm-6 col-sx-12">
+                        <a href="/" class="people-button">
+                            <i class="glyphicon glyphicon-user"></i>
+                            People
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-sx-12">
+                        <a href="/?view=gadgets" class="gadgets-button">
+                            <i class="glyphicon glyphicon-phone"></i>
+                            Gadgets
+                        </a>
+                    </div>
+                </nav>
+            <?php }; ?>
 
             <div class="row">
                 <?php include 'views/' . $view . '.php'; ?>

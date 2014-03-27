@@ -4,9 +4,9 @@ $gadgets = Witi::fetchGadgets();
 
 ?>
 
-<ul class="gadgets list row">
+<ul class="gadgets list">
     <?php foreach ($gadgets as $gadget) { ?>
-        <li class="col-md-2 gadget">
+        <li class="col-md-2 col-sm-4 col-xs-6 gadget">
             <?php if ($gadget['image']) { ?>
                 <figure class="image">
                     <img src="storage/thumb/<?php print $gadget['image']; ?>" alt="">
@@ -27,7 +27,7 @@ $gadgets = Witi::fetchGadgets();
             <h3 class="title"><?php print $gadget['name']; ?></h3>
         </li>
     <?php } ?>
-    <li class="col-md-2 last">
+    <li class="col-md-2 col-sm-4 col-xs-6 last">
         <button class="add-gadget-trigger"><i class="glyphicon glyphicon-plus"></i></button>
     </li>
 </ul>

@@ -195,3 +195,9 @@ nav.main a {
         border-bottom: 1px solid #eee;
         padding-bottom: 10px;
     }
+
+@media (max-width: 768px) {
+	nav.main > div {
+		margin-bottom: 20px;
+	}
+}
