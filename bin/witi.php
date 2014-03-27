@@ -19,11 +19,9 @@ class Witi {
 
         return $result;
     }
- 
-    public static function fetchPeople () {
-        $db = Mysql::get();
 
-        $query = 'SELECT * FROM people';
+    public static function fetch ($query) {
+        $db = Mysql::get();
 
         $result = mysql_query($query);
         $array = array();
@@ -34,20 +32,26 @@ class Witi {
 
         return $array;
     }
+ 
+    public static function fetchPeople () {
+        $query = 'SELECT * FROM people';
+        $result = self::fetch($query);
+
+        return $result;
+    }
 
     public static function fetchGadgets () {
-        $db = Mysql::get();
-
         $query = 'SELECT * FROM gadgets';
+        $result = self::fetch($query);
 
-        $result = mysql_query($query);
-        $array = array();
+        return $result;
+    }
 
-        while($row = mysql_fetch_assoc($result)) {
-            $array[] = $row;
-        }
+    public static function fetchPerson ($id) {
+        $query = "SELECT * FROM people WHERE id = '$id'";
+        $result = self::fetch($query);
 
-        return $array;
+        return $result;
     }
 
     public static function fetchGadgetById ($id) {
