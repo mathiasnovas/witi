@@ -33,4 +33,27 @@ jQuery(function ($) {
     $('.add-person-trigger').on('click', function () {
         form.toggleClass('visible');
     });
+
+    // Select person
+    var people = $('.person');
+
+    people.on('click', 'a', function (e) {
+        if (location.hash) {
+            e.preventDefault();
+
+            var person = $(this);
+
+            $.ajax({
+                url: 'bin/update.php',
+                type: 'POST',
+                data: {
+                    id: person.closest('li').attr('data-id'),
+                    gadgetId: location.hash.replace('#', '')
+                },
+                success: function (data) {
+                    location.reload();
+                }
+            });
+        }
+    });
 });

@@ -33,7 +33,7 @@ class Witi {
         return $array;
     }
 
-    public static function add ($query) {
+    public static function set ($query) {
         $db = Mysql::get();
 
         mysql_query($query);
@@ -79,7 +79,29 @@ class Witi {
             VALUES ('$name', '$image')
         ";
 
-        self::add($query);
+        self::set($query);
+    }
+
+    public static function updatePerson ($id, $gadgetId) {
+        self::wipePeople($gadgetId);
+
+        var_dump($id, $gadgetId);
+
+        $query = " UPDATE gadgets
+            SET personId = '$id'
+            WHERE id = '$gadgetId'
+        ";
+
+        self::set($query);
+    }
+
+    public static function wipePeople ($id) {
+        $query = "UPDATE gadgets
+            SET personId = ''
+            WHERE id = '$id'
+        ";
+
+        self::set($query);
     }
 
 }

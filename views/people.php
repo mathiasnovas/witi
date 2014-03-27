@@ -7,36 +7,40 @@ $type   = witi::parseUrl('type');
 
 <ul class="people list row">
     <?php foreach ($people as $person) { ?>
-        <li class="col-md-2">
-            <a href="?view=person&id=<?php print $person['id']; ?>">
+        <?php 
+            $gadgets = Witi::fetchGadgetsById($person['id']);
+            $hasGadget = false;
+            $id = $person['id'];
+
+            if (isset($type)) {
+                foreach ($gadgets as $gadget) {
+                    if ($gadget['id'] === $type) {
+                        $hasGadget = true;
+                    }
+                }
+            }
+        ?>
+        <li class="col-md-2 person <?php ($hasGadget ? print 'has-gadget' : ''); ?>" data-id="<?php print $id ?>">
+            <a href="?view=person&id=<?php print $id ?>">
                 <?php if ($person['image']) { ?>
                     <figure class="image">
                         <img src="storage/thumb/<?php print $person['image']; ?>" alt="">
+                        <?php if (!isset($type) && $gadgets) { ?>
+                            <div class="gadgets">
+                                <div>
+                                    <ul>
+                                        <?php foreach ($gadgets as $gadget) { ?>
+                                            <li><?php print $gadget['name']; ?></li>     
+                                        <?php } ?>
+                                    </ul>
+                                </div>
+                            </div>
+                        <?php } ?>
                     </figure>
                 <?php } ?>
+
+                <h3 class="title"><?php print $person['name']; ?></h3>
             </a>
-
-            <h3 class="title"><?php print $person['name']; ?></h3>
-
-            <?php 
-                if (isset($type)) {
-                    $gadgets = Witi::fetchGadgetsById($person['id']);
-                    if ($gadgets) {
-                        foreach ($gadgets as $gadget) {
-                            if ($gadget['id'] == $type) {
-                                echo 'Markert';
-                            }
-                        }
-                    }
-                } else {
-                    $gadgets = Witi::fetchGadgetsById($person['id']);
-                    if ($gadgets) {
-                        foreach ($gadgets as $gadget) {
-                            print $gadget['name'];
-                        }
-                    }
-                }
-            ?>
         </li>
     <?php } ?>
     <li class="col-md-2 last">
