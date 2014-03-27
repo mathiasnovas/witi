@@ -63,4 +63,44 @@ jQuery(function ($) {
             });
         }
     });
+
+    // Assign gadget to person
+    var assign = $('.assign');
+    if (assign.length > 0) {
+        assign.on('change', function () {
+            var id;
+
+            assign.find('option').each(function () {
+                if (this.selected) {
+                    id = $(this).attr('value');
+                }
+            });
+
+            $.ajax({
+                url: 'bin/update.php',
+                type: 'POST',
+                data: {
+                    id: assign.closest('.person').attr('data-id'),
+                    gadgetId: id
+                },
+                success: function (data) {
+                    location.reload();
+                }
+            });
+        });
+    }
+
+    // Report user
+    var report = $('.report');
+    if (report.length > 0) {
+        report.on('click', function () {
+            $.ajax({
+                url: 'bin/update.php',
+                data: {
+                    id: report.closest('.person').attr('data-id'),
+                    type: 'report'
+                }
+            });
+        });
+    }
 });

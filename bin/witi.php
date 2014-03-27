@@ -112,4 +112,23 @@ class Witi {
         self::set($query);
     }
 
+    public static function getReports ($id) {
+        $query = "SELECT * FROM report
+            WHERE personId = '$id'
+        ";
+        $result = self::fetch($query);
+
+        return $result;
+    }
+
+    public static function setReport ($id) {
+        $date = date();
+
+        $query = "INSERT INTO report (personId, date)
+            VALUES ('$id', '$date')
+        ";
+
+        var_dump($query);
+    }
+
 }

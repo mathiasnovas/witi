@@ -22,6 +22,10 @@ h2, .beta {
 h3, .gamma {
     font-size: 1.2em;
 }
+h4, .delta {
+    font-size: 1em;
+    color: #0589CD;
+}
 
 /* Add poeple form */
 .add-person,
@@ -40,6 +44,12 @@ h3, .gamma {
     .list > li {
         margin-bottom: 25px;
     }
+    .list a {
+        color: #000;
+    }
+    .list a:hover {
+        text-decoration: none;
+    }
     .list .image {
         border-radius: 50%;
         overflow: hidden;
@@ -57,21 +67,14 @@ h3, .gamma {
     .list img {
         width: 100%;
     }
-    .list .last {
-        height: 100%;
-    }
     .list .add-person-trigger,
     .list .add-gadget-trigger {
         background: none;
         border: none;
-        display: block;
-        height: 100%;
-        width: 100%;
     }
     .list .add-person-trigger i,
     .list .add-gadget-trigger i {
         color: #0589CD;
-        height: 100%;
     }
     .list .gadgets,
     .list .people {
@@ -155,3 +158,40 @@ nav.main a {
 		transition: .5s;
 		-webkit-transition: .5s;
 	}
+
+/* Arrow list */
+.arrow-list {}
+    .arrow-list li {}
+    .arrow-list li:before {
+        content: '';
+    }
+
+/* Person full view */
+.person.full {}
+    .person.full p {
+        margin: 0;
+    }
+    .person.full .left {
+        text-align: center;
+    }
+    .person.full .image {
+        padding: 0 25px;
+    }
+    .person.full .image img {
+        border-radius: 50%;
+        width: 100%;
+    }
+    .person .box {
+        margin-bottom: 40px;
+    }
+    .person .box select {
+        width: 100%;
+    }
+    .person .box .report {
+        margin-top: 10px;
+        width: 100%;
+    }
+    .person.full h4 {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+    }

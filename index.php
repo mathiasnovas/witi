@@ -10,6 +10,7 @@ $type = Witi::parseUrl('type');
         <meta charset="utf-8">
         <title>Witi</title>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/witi.css">
 
@@ -22,19 +23,21 @@ $type = Witi::parseUrl('type');
     </head>
     <body>
         <header class="main">
-            <h1 class="logo">Witi</h1>
+            <a href="/">
+                <h1 class="logo">Witi</h1>
+            </a>
         </header>
         
         <div class="container">
             
             <nav class="row main">
-                <div class="col-lg-6">
+                <div class="col-sm-6 col-sx-12">
                     <a href="#" class="people-button">
                         <i class="glyphicon glyphicon-user"></i>
                         People
                     </a>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-sm-6 col-sx-12">
                     <a href="#" class="gadgets-button">
                         <i class="glyphicon glyphicon-phone"></i>
                         Gadgets

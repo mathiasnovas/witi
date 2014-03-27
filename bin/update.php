@@ -2,7 +2,13 @@
 
 require_once 'witi.php';
 
+$type = (isset($_POST['type']) ? $_POST['type'] : '');
 $id = $_POST['id'];
-$gadgetId = $_POST['gadgetId'];
+$gadgetId = (isset($_POST['gadgetId']) ? $_POST['gadgetId'] : false );
+$date = (isset($_POST['date']) ? $_POST['date'] : false );
 
-Witi::updatePerson($id, $gadgetId);
+if ($type === 'report') {
+    Witi::setReport($id);
+} else {
+    Witi::updatePerson($id, $gadgetId);
+}

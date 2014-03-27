@@ -90,6 +90,9 @@ $thumb = new resize('../storage/' . $image_name);
 $thumb->resizeImage(300, 300, 'crop');
 $thumb->saveImage('../storage/thumb/' . $image_name);
 
+$large = new resize('../storage/' . $image_name);
+$large->resizeImage(600, 600, 'crop');
+$large->saveImage('../storage/large/' . $image_name);
 
 if ($type == 'person') {
   witi::addPerson($firstName, $image_name);

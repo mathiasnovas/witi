@@ -5,7 +5,7 @@ $type   = witi::parseUrl('type');
 
 ?>
 
-<ul class="people list row">
+<ul class="people list">
     <?php foreach ($people as $person) { ?>
         <?php 
             $gadgets = Witi::fetchGadgetsById($person['id']);
@@ -20,7 +20,7 @@ $type   = witi::parseUrl('type');
                 }
             }
         ?>
-        <li class="col-md-2 person <?php ($hasGadget ? print 'has-gadget' : ''); ?>" data-id="<?php print $id ?>">
+        <li class="col-md-2 col-sm-4 col-xs-6 person <?php ($hasGadget ? print 'has-gadget' : ''); ?>" data-id="<?php print $id ?>">
             <a href="?view=person&id=<?php print $id ?>">
                 <?php if ($person['image']) { ?>
                     <figure class="image">
@@ -43,7 +43,7 @@ $type   = witi::parseUrl('type');
             </a>
         </li>
     <?php } ?>
-    <li class="col-md-2 last">
+    <li class="col-md-2 col-sm-4 col-xs-6 person last">
         <button class="add-person-trigger"><i class="glyphicon glyphicon-plus"></i></button>
     </li>
 </ul>
