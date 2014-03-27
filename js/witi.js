@@ -1,4 +1,7 @@
 jQuery(function ($) {
+    // Initialize fastclick
+    FastClick.attach(document.body);
+
     // Form
     var form = $('.add-person');
     if (!form.length > 0) {
