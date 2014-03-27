@@ -55,18 +55,10 @@ class Witi {
     }
 
     public static function fetchGadgetById ($id) {
-        $db = Mysql::get();
-
         $query = 'SELECT * FROM gadgets WHERE personId="' . $id . '"';
+        $result = self::fetch($query);
 
-        $result = mysql_query($query);
-        $array = array();
-
-        while($row = mysql_fetch_assoc($result)) {
-            $array[] = $row;
-        }
-
-        return $array;
+        return $result;
     }
 
 }
