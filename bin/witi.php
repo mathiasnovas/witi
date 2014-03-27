@@ -51,10 +51,10 @@ class Witi {
         $query = "SELECT * FROM people WHERE id = '$id'";
         $result = self::fetch($query);
 
-        return $result;
+        return $result[0];
     }
 
-    public static function fetchGadgetById ($id) {
+    public static function fetchGadgetsById ($id) {
         $query = 'SELECT * FROM gadgets WHERE personId="' . $id . '"';
         $result = self::fetch($query);
 
