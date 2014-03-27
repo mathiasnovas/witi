@@ -19,8 +19,14 @@ $type = Witi::parseUrl('type');
           <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body>
-        <?php include 'views/' . $view . '.php'; ?>
+    <body class="container">
+        <header class="header-main">
+            Witi logo
+        </header>
+
+        <div class="row">
+            <?php include 'views/' . $view . '.php'; ?>
+        </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="js/bootstrap.js"></script>
