@@ -2,6 +2,7 @@
 body {
     font-family: 'Open sans', sans-serif;
     font-size: 16px;
+    font-weight: 300;
 }
 ul {
     list-style: none;
@@ -76,7 +77,17 @@ nav.main a {
 	text-transform: uppercase;
 	line-height: 80px;
 	position: relative;
+	transition: .5s;
+	-webkit-transition: .5s;
 }
+	nav.main a:hover {
+		background-color: #006DA8;
+		text-decoration: none;
+	}
+	nav.main a:hover .glyphicon {
+		color: #00507E;
+		border-color: #00507E; 
+	}
 	nav.main a .glyphicon {
 		position: absolute;
 		left: 0;
@@ -86,4 +97,6 @@ nav.main a {
 		border-right: 1px solid #016EA6;
 		color: #016EA6;
 		font-size: 20px;
+		transition: .5s;
+		-webkit-transition: .5s;
 	}
