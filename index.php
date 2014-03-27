@@ -1,7 +1,7 @@
 <?php 
 require_once 'bin/witi.php'; 
 
-$view = Witi::parseUrl('view');
+$view = (Witi::parseUrl('view') ? Witi::parseUrl('view') : 'people');
 $type = Witi::parseUrl('type');
 ?>
 <!doctype html>
