@@ -37,6 +37,9 @@ $type   = witi::parseUrl('type');
             ?>
         </li>
     <?php } ?>
+    <li>
+        <button class="add-person-trigger">Add +</button>
+    </li>
 </ul>
 
 <?php require_once 'views/parts/add_person.php'; ?>

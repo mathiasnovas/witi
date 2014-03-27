@@ -1,0 +1,7 @@
+.add-person {
+    display: none;
+}
+
+.visible.add-person {
+    display: block;
+}

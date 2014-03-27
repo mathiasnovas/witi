@@ -28,4 +28,9 @@ jQuery(function ($) {
             }
         });
     }
+
+    // Toggle form
+    $('.add-person-trigger').on('click', function () {
+        form.toggleClass('visible');
+    });
 });
