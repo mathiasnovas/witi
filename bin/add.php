@@ -3,8 +3,16 @@
 require_once 'witi.php';
 require_once 'resize.php';
 
-$firstName = $_POST['name'];
-$imageTmpName = $_FILES['image']['tmp_name'][0];
+$type = $_POST['type'];
+
+var_dump($type);
+if ($type == 'person') {
+  $firstName = $_POST['name'];
+  $imageTmpName = $_FILES['image']['tmp_name'][0];
+} elseif ($type == 'gadget') {
+  $gadgetName = $_POST['name'];
+  $imageTmpName = $_FILES['image']['tmp_name'][0];
+}
 
 //define a maxim size for the uploaded images in Kb
  define ("MAX_SIZE","1000"); 
@@ -82,4 +90,9 @@ $thumb = new resize('../storage/' . $image_name);
 $thumb->resizeImage(300, 300, 'crop');
 $thumb->saveImage('../storage/thumb/' . $image_name);
 
-witi::addPerson($firstName, $image_name);
+
+if ($type == 'person') {
+  witi::addPerson($firstName, $image_name);
+} elseif ($type == 'gadget') {
+  witi::addGadget($gadgetName, $image_name);
+}

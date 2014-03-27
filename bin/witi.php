@@ -82,6 +82,14 @@ class Witi {
         self::set($query);
     }
 
+    public static function addGadget ($name, $image) {
+        $query = "INSERT INTO gadgets (name, image)
+            VALUES ('$name', '$image')
+        ";
+
+        self::set($query);
+    }
+
     public static function updatePerson ($id, $gadgetId) {
         self::wipePeople($gadgetId);
 

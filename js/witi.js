@@ -1,6 +1,9 @@
 jQuery(function ($) {
     // Form
     var form = $('.add-person');
+    if (!form.length > 0) {
+        var form = $('.add-gadget');
+    };
 
     if (form.length > 0) {
         form.on({
@@ -31,6 +34,10 @@ jQuery(function ($) {
 
     // Toggle form
     $('.add-person-trigger').on('click', function () {
+        form.toggleClass('visible');
+    });
+    // Toggle form
+    $('.add-gadget-trigger').on('click', function () {
         form.toggleClass('visible');
     });
 

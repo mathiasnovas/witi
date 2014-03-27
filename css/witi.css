@@ -24,10 +24,12 @@ h3, .gamma {
 }
 
 /* Add poeple form */
-.add-person {
+.add-person,
+.add-gadget {
     display: none;
 }
-.visible.add-person {
+.visible.add-person,
+.visible.add-gadget {
     display: block;
 }
 
@@ -58,18 +60,21 @@ h3, .gamma {
     .list .last {
         height: 100%;
     }
-    .list .add-person-trigger {
+    .list .add-person-trigger,
+    .list .add-gadget-trigger {
         background: none;
         border: none;
         display: block;
         height: 100%;
         width: 100%;
     }
-    .list .add-person-trigger i {
+    .list .add-person-trigger i,
+    .list .add-gadget-trigger i {
         color: #0589CD;
         height: 100%;
     }
-    .list .gadgets {
+    .list .gadgets,
+    .list .people {
         position: absolute;
         background: rgba(255,128,0,.8);
         height: 100%;
@@ -78,17 +83,20 @@ h3, .gamma {
         border-radius: 50%;
         left: 0;
     }
-    .list .gadgets > div {
+    .list .gadgets > div,
+    .list .people > div {
         display: table;
         vertical-align: middle;
         height: 100%;
         width: 100%;
     }
-        .list .gadgets ul {
+        .list .gadgets ul,
+        .list .people ul {
             display: table-cell;
             vertical-align: middle;
         }
-        .list .gadgets li {
+        .list .gadgets li,
+        .list .people li {
             color: white;
             font-weight: bold;
             display: inline-block;
@@ -105,7 +113,7 @@ header.main {
 	header.main h1.logo {
 		background: url("../img/logo.png") no-repeat center center;
 		text-indent: -9999px;
-		height: 76px;
+		height: 77px;
 		margin: 0;
 	}
 
