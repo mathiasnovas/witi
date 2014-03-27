@@ -32,6 +32,12 @@ class Witi {
 
         return $array;
     }
+
+    public static function add ($query) {
+        $db = Mysql::get();
+
+        mysql_query($query);
+    }
  
     public static function fetchPeople () {
         $query = 'SELECT * FROM people';
@@ -66,6 +72,14 @@ class Witi {
         $result = self::fetch($query);
 
         return $result;
+    }
+
+    public static function addPerson ($name, $image) {
+        $query = "INSERT INTO people (name, image)
+            VALUES ('$name', '$image')
+        ";
+
+        self::add($query);
     }
 
 }

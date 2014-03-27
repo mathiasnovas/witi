@@ -8,6 +8,12 @@ $type   = witi::parseUrl('type');
 <ul class="people">
     <?php foreach ($people as $person) { ?>
         <li>
+            <?php if ($person['image']) { ?>
+                <figure class="image">
+                    <img src="img/thumb/<?php print $person['image']; ?>" alt="">
+                </figure>
+            <?php } ?>
+
             <?php print $person['name']; ?>
             <br>
             <?php 
@@ -32,3 +38,5 @@ $type   = witi::parseUrl('type');
         </li>
     <?php } ?>
 </ul>
+
+<?php require_once 'views/parts/add_person.php'; ?>
