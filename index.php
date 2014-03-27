@@ -20,13 +20,32 @@ $type = Witi::parseUrl('type');
           <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body class="container">
-        <header class="header-main">
-            Witi logo
+    <body>
+        <header class="main">
+            <h1 class="logo">Witi</h1>
         </header>
+        
+        <div class="container">
+            
+            <nav class="row main">
+                <div class="col-lg-6">
+                    <a href="#" class="people-button">
+                        <i class="glyphicon glyphicon-user"></i>
+                        People
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <a href="#" class="gadgets-button">
+                        <i class="glyphicon glyphicon-phone"></i>
+                        Gadgets
+                    </a>
+                </div>
+            </nav>
 
-        <div class="row">
-            <?php include 'views/' . $view . '.php'; ?>
+            <div class="row">
+                <?php include 'views/' . $view . '.php'; ?>
+            </div>
+
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

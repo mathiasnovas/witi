@@ -49,3 +49,41 @@ h3, .gamma {
         color: #0589CD;
         height: 100%;
     }
+
+header.main {
+	background-color: #F1F0F0;
+	padding: 35px 0;
+}
+	header.main h1.logo {
+		background: url("../img/logo.png") no-repeat center center;
+		text-indent: -9999px;
+		height: 76px;
+		margin: 0;
+	}
+
+.container {
+	margin-top: 25px;
+}
+
+nav.main a {
+	height: 80px;
+	background-color: #0589CD;
+	display: block;
+	color: #FFF;
+	padding-left: 80px;
+	text-align: center;
+	font-size: 20px;
+	text-transform: uppercase;
+	line-height: 80px;
+	position: relative;
+}
+	nav.main a .glyphicon {
+		position: absolute;
+		left: 0;
+		width: 80px;
+		height: 78px;
+		line-height: 80px;
+		border-right: 1px solid #016EA6;
+		color: #016EA6;
+		font-size: 20px;
+	}
