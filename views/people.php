@@ -1,6 +1,7 @@
 <?php
 
 $people = Witi::fetchPeople();
+$type   = witi::parseUrl('type');
 
 ?>
 
@@ -10,11 +11,21 @@ $people = Witi::fetchPeople();
             <?php print $person['name']; ?>
             <br>
             <?php 
-                $gadgets = Witi::fetchGadgetById($person['id']);
-                if ($gadgets) {
-                    foreach ($gadgets as $gadget) {
-                        //var_dump($value);
-                        print $gadget['name'];
+                if (isset($type)) {
+                    $gadgets = Witi::fetchGadgetById($person['id']);
+                    if ($gadgets) {
+                        foreach ($gadgets as $gadget) {
+                            if ($gadget['id'] == $type) {
+                                echo 'Markert';
+                            }
+                        }
+                    }
+                } else {
+                    $gadgets = Witi::fetchGadgetById($person['id']);
+                    if ($gadgets) {
+                        foreach ($gadgets as $gadget) {
+                            print $gadget['name'];
+                        }
                     }
                 }
             ?>
