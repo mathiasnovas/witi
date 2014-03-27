@@ -11,7 +11,7 @@ $type   = witi::parseUrl('type');
             <a href="?view=person&id=<?php print $person['id']; ?>">
                 <?php if ($person['image']) { ?>
                     <figure class="image">
-                        <img src="img/thumb/<?php print $person['image']; ?>" alt="">
+                        <img src="storage/thumb/<?php print $person['image']; ?>" alt="">
                     </figure>
                 <?php } ?>
             </a>

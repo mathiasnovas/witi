@@ -68,7 +68,7 @@ $image_name=time().'.'.$extension;
 
 //the new name will be containing the full path where will be stored (images 
 //folder)
-$newname="../img/".$image_name;
+$newname="../storage/".$image_name;
 
 //we verify if the image has been uploaded, and print error instead
 $copied = copy($imageTmpName, $newname);
@@ -78,8 +78,8 @@ if (!$copied)
   $errors=1;
 }}}
 
-$thumb = new resize('../img/' . $image_name);
+$thumb = new resize('../storage/' . $image_name);
 $thumb->resizeImage(300, 300, 'crop');
-$thumb->saveImage('../img/thumb/' . $image_name);
+$thumb->saveImage('../storage/thumb/' . $image_name);
 
 witi::addPerson($firstName, $image_name);
