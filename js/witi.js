@@ -84,6 +84,7 @@ jQuery(function ($) {
                     gadgetId: id
                 },
                 success: function (data) {
+                    console.log(data);
                     location.reload();
                 }
             });
@@ -96,9 +97,13 @@ jQuery(function ($) {
         report.on('click', function () {
             $.ajax({
                 url: 'bin/update.php',
+                type: 'POST',
                 data: {
                     id: report.closest('.person').attr('data-id'),
                     type: 'report'
+                },
+                success: function (data) {
+                    location.reload();
                 }
             });
         });

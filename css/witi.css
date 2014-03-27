@@ -184,6 +184,13 @@ nav.main a {
     .person .box {
         margin-bottom: 40px;
     }
+    .person.full h4 {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+    }
+    .person.full li {
+        padding: 2px 0;
+    }
     .person .box select {
         width: 100%;
     }
@@ -191,6 +198,7 @@ nav.main a {
         margin-top: 10px;
         width: 100%;
     }
+
     .person.full h4 {
         border-bottom: 1px solid #eee;
         padding-bottom: 10px;

@@ -11,6 +11,7 @@ $type   = witi::parseUrl('type');
             $gadgets = Witi::fetchGadgetsById($person['id']);
             $hasGadget = false;
             $id = $person['id'];
+            $rank = Witi::getRank($id);
 
             if (isset($type)) {
                 foreach ($gadgets as $gadget) {
@@ -39,7 +40,7 @@ $type   = witi::parseUrl('type');
                     </figure>
                 <?php } ?>
 
-                <h3 class="title"><?php print $person['name']; ?></h3>
+                <h3 class="title">#<?php print $rank . ' '; print $person['name']; ?></h3>
             </a>
         </li>
     <?php } ?>

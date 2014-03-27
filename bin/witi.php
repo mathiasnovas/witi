@@ -40,7 +40,9 @@ class Witi {
     }
  
     public static function fetchPeople () {
-        $query = 'SELECT * FROM people';
+        $query = "SELECT * FROM people
+            ORDER BY score DESC
+        ";
         $result = self::fetch($query);
 
         return $result;
@@ -91,16 +93,37 @@ class Witi {
     }
 
     public static function updatePerson ($id, $gadgetId) {
+
+        $gadgets = self::fetchGadgetsById($id);
+        $continue = true;
+
+
+        if (count($gadgets) > 0) {
+            foreach ($gadgets as $gadget) {
+                if ($gadget['id'] === $gadgetId) {
+                    $continue = false;
+                }
+            }
+        }
+
+        if (!$continue) {
+            return;
+        }
+
         self::wipePeople($gadgetId);
 
-        var_dump($id, $gadgetId);
-
-        $query = " UPDATE gadgets
+        $gQuery = "UPDATE gadgets
             SET personId = '$id'
             WHERE id = '$gadgetId'
         ";
 
-        self::set($query);
+        $pQuery = "UPDATE people
+            SET score = score + 10
+            WHERE id = '$id'
+        ";
+
+        self::set($gQuery);
+        self::set($pQuery);
     }
 
     public static function wipePeople ($id) {
@@ -115,6 +138,7 @@ class Witi {
     public static function getReports ($id) {
         $query = "SELECT * FROM report
             WHERE personId = '$id'
+            ORDER BY date DESC
         ";
         $result = self::fetch($query);
 
@@ -122,13 +146,38 @@ class Witi {
     }
 
     public static function setReport ($id) {
-        $date = date();
+        $date = date('Y-m-d H:i:s');
 
-        $query = "INSERT INTO report (personId, date)
+        $rQuery = "INSERT INTO report (personId, date)
             VALUES ('$id', '$date')
         ";
 
-        var_dump($query);
+        $pQuery = "UPDATE people
+            SET score = score - 5
+            WHERE id = '$id'
+        ";
+
+        self::set($rQuery);
+        self::set($pQuery);
+    }
+
+    public static function getRank ($id) {
+        $query = "SELECT * FROM people
+            ORDER BY score DESC
+        ";
+        $people = self::fetch($query);
+        $i = 1;
+        $rank;
+
+        foreach ($people as $person) {
+            if ($person['id'] === $id) {
+                $rank = $i;
+            }
+
+            $i++;
+        }
+
+        return $rank;
     }
 
 }

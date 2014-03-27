@@ -5,6 +5,7 @@ $person = witi::fetchPerson($id);
 $gadgets = witi::fetchGadgetsById($id);
 $allGadgets = witi::fetchGadgets();
 $reports = witi::getReports($id);
+$rank = witi::getRank($id);
 
 ?>
 
@@ -16,7 +17,7 @@ $reports = witi::getReports($id);
             </figure>
         <?php } ?>
 
-        <h1><?php print $person['name']; ?></h1>
+        <h1>#<?php print $rank . ' '; print $person['name']; ?></h1>
     </div>
     <div class="col-lg-3 col-lg-offset-1">
         <div class="box">
@@ -38,8 +39,10 @@ $reports = witi::getReports($id);
             <form class="">
                 <select class="assign">
                     <option value="">Select gadget</option>
-                    <?php foreach ($allGadgets as $gadget) { ?>
-                        <option value="<?php print $gadget['id'] ?>"><?php print $gadget['name'] ?></option>
+                    <?php foreach ($allGadgets as $key => $gadget) { ?>
+                        <option value="<?php print $gadget['id'] ?>">
+                            <?php print $gadget['name'] ?>
+                        </option>
                     <?php } ?>
                 </select>
             </form>
