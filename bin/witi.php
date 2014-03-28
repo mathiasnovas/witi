@@ -1,12 +1,6 @@
 <?php
 
-class Mysql {
-    public static function get () {
-        $db = mysql_connect('localhost', 'root', 'root');
-
-        return mysql_select_db('witi', $db);
-    }
-}
+require_once 'mysql.php';
 
 class Witi {
 

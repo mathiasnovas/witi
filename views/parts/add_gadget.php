@@ -13,6 +13,6 @@
 
         <input type="hidden" name="type" value="gadget">
         <input type="hidden" name="rotation" value="">
-        <button class="btn btn-default" type="submit">Go</button>
+        <button class="btn btn-default" type="submit">Add new gadget</button>
     </div>
 </form>
