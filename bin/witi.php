@@ -1,5 +1,7 @@
 <?php
 
+require_once 'mysql.php';
+
 class Witi {
 
     public static function parseUrl ($param) {
