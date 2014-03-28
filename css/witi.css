@@ -56,7 +56,10 @@ h4, .delta {
     text-align: center;
 }
     .list > li {
-        margin-bottom: 25px;
+        margin-bottom: 30px;
+    }
+    .list > li:nth-child(6n+7) {
+        clear: left;
     }
     .list a {
         color: #000;
