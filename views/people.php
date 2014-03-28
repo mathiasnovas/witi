@@ -49,8 +49,17 @@ $type   = witi::parseUrl('type');
                                 </div>
                             </div>
                         <?php } ?>
+
+                        <?php if (!isset($type)) { ?>
+                            <div class="overlay">
+                                <div class="overlay-wrap">
+                                    <p>View profile</p>
+                                </div>
+                            </div>
+                        <?php } ?>
                     </figure>
                 <?php } ?>
+
 
                 <h3 class="title">#<?php print $rank . ' '; print $person['name']; ?></h3>
             </a>

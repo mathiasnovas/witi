@@ -138,6 +138,7 @@ h4, .delta {
         position: relative;
     }
     .list .add .icon-wrapper {
+        border-radius: 50%;
         cursor: pointer;
         position: absolute;
         height: 100%;
@@ -154,6 +155,39 @@ h4, .delta {
 		font-size: 26px;
         font-size: 1.5em;
         top: 40%;
+        transition: .2s;
+    }
+    .list .add:hover .image {
+        /*border-color: #D2700C;*/
+    }
+    .list .add:hover i {
+        text-align: center;
+        -webkit-transform: rotate(180deg);
+    }
+    .list .overlay {
+        background: rgba(0,0,0,.6);
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        let: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        transition: .4s;
+    }
+    .list li:hover .overlay {
+        opacity: 1;
+    }
+    .list .overlay .overlay-wrap {
+        display: table;
+        width: 100%;
+        height: 100%;
+    }
+    .list .overlay .overlay-wrap p {
+        color: white;
+        display: table-cell;
+        font-weight: normal;
+        vertical-align: middle;
     }
 
 header.main {
