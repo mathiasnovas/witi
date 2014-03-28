@@ -41,7 +41,7 @@ class Witi {
  
     public static function fetchPeople () {
         $query = "SELECT * FROM people
-            ORDER BY score DESC
+            ORDER BY name
         ";
         $result = self::fetch($query);
 

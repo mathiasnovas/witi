@@ -3,15 +3,26 @@ jQuery(function ($) {
     FastClick.attach(document.body);
 
     // Form
-    var form = $('.add-person');
-    if (!form.length > 0) {
-        var form = $('.add-gadget');
-    };
+    var form = $('.add-form');
 
     if (form.length > 0) {
         form.on({
             submit: function (e) {
                 e.preventDefault();
+
+                var name = form.find('#name').val().length > 0,
+                    file = form.find('#image').val().length > 0;
+
+                if (!name || !file) {
+                    if (!file) {
+                        form.find('#image').addClass('required');
+                    }
+                    if (!name) {
+                        form.find('#name').addClass('required');
+                    }
+
+                    return false;
+                }
 
                 var formData = new FormData($(this)[0]);
 
@@ -36,13 +47,19 @@ jQuery(function ($) {
     }
 
     // Toggle form
-    $('.add-person-trigger').on('click', function () {
-        form.toggleClass('visible');
+    $('.add-trigger').on('click', function (e) {
+        e.preventDefault();
+        form.addClass('visible');
+        $('body').on('click', closeForm);
     });
-    // Toggle form
-    $('.add-gadget-trigger').on('click', function () {
-        form.toggleClass('visible');
-    });
+
+    var closeForm = function (e) {
+        var formTrigger = $('.add-trigger');
+
+        if (!form.has($(e.target)).length > 0 && !formTrigger.has($(e.target)).length > 0) {
+            form.removeClass('visible');
+        }
+    }
 
     // Select person
     var people = $('.person');
