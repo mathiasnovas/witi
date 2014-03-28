@@ -28,7 +28,7 @@ $gadgets = Witi::fetchGadgets();
                         <div>
                             <ul>
                                 <?php foreach ($people as $person) { ?>
-                                    <li><a href="/?view=person&id=<?php print $person['id']; ?>"><?php print $person['name']; ?></a></li>
+                                    <li><?php print $person['name']; ?></li>
                                 <?php } ?>
                             </ul>
                         </div>
