@@ -6,6 +6,7 @@ jQuery(function ($) {
     var form = $('.add-form');
 
     if (form.length > 0) {
+        var orientation = (typeof window.orientation === typeof undefined ? 'undefined' : window.orientation);
         form.on({
             submit: function (e) {
                 e.preventDefault();
@@ -43,7 +44,7 @@ jQuery(function ($) {
                 });
                 
             }
-        }).find('[name="rotation"]').prop('value', window.orientation || 'undefined');
+        }).find('[name="rotation"]').val(orientation);
     }
 
     // Toggle form

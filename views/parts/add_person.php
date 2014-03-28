@@ -12,7 +12,7 @@
 	    </div>
 
 	    <input type="hidden" name="type" value="person">
-	    <input type="hidden" name="rotation">
+	    <input type="hidden" name="rotation" value="">
 	    <button class="btn btn-default" type="submit">Go</button>
 	</div>
 </form>
