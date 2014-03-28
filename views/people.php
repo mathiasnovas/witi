@@ -15,6 +15,8 @@ $type   = witi::parseUrl('type');
                 <i class="glyphicon glyphicon-plus"></i>
             </div>
         </a>
+
+        <h3 class="title">Add new user</h3>
     </li>        
     <?php foreach ($people as $person) { ?>
         <?php 

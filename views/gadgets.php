@@ -13,6 +13,8 @@ $gadgets = Witi::fetchGadgets();
             <div class="icon-wrapper">
                 <i class="glyphicon glyphicon-plus"></i>
             </div>
+
+            <h3 class="title">Add new gadget</h3>
         </a>
     </li>
     <?php foreach ($gadgets as $gadget) { ?>
