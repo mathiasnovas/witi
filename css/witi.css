@@ -63,8 +63,24 @@ h4, .delta {
     .list > li:nth-child(6n+7) {
         clear: left;
     }
+    @media only screen and (max-width: 991px) {
+        .list > li:nth-child(6n+7) {
+            clear: none;
+        }
+        .list li:nth-child(3n+4) {
+            clear: left;
+        }
+    }
+    @media only screen and (max-width: 767px) {
+        .list li:nth-child(3n+4) {
+            clear: none;
+        }
+        .list li:nth-child(2n+3) {
+            clear: left;
+        }
+    }
     .list a {
-        color: #000;
+        color: #333;
         display: block;
         overflow: hidden;
     }
