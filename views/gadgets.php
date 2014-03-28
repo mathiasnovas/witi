@@ -35,6 +35,14 @@ $gadgets = Witi::fetchGadgets();
                             </div>
                         </div>
                         <?php }; ?>
+
+                        <?php if (!isset($type)) { ?>
+                            <div class="overlay">
+                                <div class="overlay-wrap">
+                                    <p>View gadget</p>
+                                </div>
+                            </div>
+                        <?php } ?>                        
                     </figure>
                 <?php } ?>
                 <h3 class="title"><?php print $gadget['name']; ?></h3>
