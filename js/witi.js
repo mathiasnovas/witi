@@ -32,7 +32,7 @@ jQuery(function ($) {
                 });
                 
             }
-        });
+        }).find('[name="rotation"]').prop('value', window.orientation || 'undefined');
     }
 
     // Toggle form
