@@ -11,6 +11,9 @@ ul {
 nav {
     margin-bottom: 50px;
 }
+input.required  {
+    border: 1px solid red;
+}
 
 /* Type */
 h1, .alpha {
@@ -145,7 +148,7 @@ h4, .delta {
 		margin-left: -13px;
 		font-size: 26px;
         font-size: 1.5em;
-        top: 45%;
+        top: 50%;
     }
 
 header.main {

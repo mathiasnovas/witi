@@ -10,6 +10,20 @@ jQuery(function ($) {
             submit: function (e) {
                 e.preventDefault();
 
+                var name = form.find('#name').val().length > 0,
+                    file = form.find('#image').val().length > 0;
+
+                if (!name || !file) {
+                    if (!file) {
+                        form.find('#image').addClass('required');
+                    }
+                    if (!name) {
+                        form.find('#name').addClass('required');
+                    }
+
+                    return false;
+                }
+
                 var formData = new FormData($(this)[0]);
 
                 $.ajax({
@@ -33,7 +47,8 @@ jQuery(function ($) {
     }
 
     // Toggle form
-    $('.add-trigger').on('click', function () {
+    $('.add-trigger').on('click', function (e) {
+        e.preventDefault();
         form.addClass('visible');
         $('body').on('click', closeForm);
     });
