@@ -160,10 +160,6 @@ h4, .delta {
     .list .add:hover .image {
         /*border-color: #D2700C;*/
     }
-    .list .add:hover i {
-        text-align: center;
-        -webkit-transform: rotate(180deg);
-    }
     .list .overlay {
         background: rgba(0,0,0,.6);
         opacity: 0;
@@ -247,39 +243,45 @@ nav.main a {
         content: '';
     }
 
-/* Person full view */
-.person.full {}
-    .person.full p {
+/* Full view */
+.full {}
+    .full p {
         margin: 0;
     }
-    .person.full .left {
+    .full .left {
         text-align: center;
     }
-    .person.full .image {
+    .full .image {
         padding: 0 25px;
     }
-    .person.full .image img {
+    .full .image img {
         border-radius: 50%;
         width: 100%;
     }
-    .person .box {
+     .box {
         margin-bottom: 40px;
     }
-    .person.full h4 {
+    .full h4 {
         border-bottom: 1px solid #eee;
         padding-bottom: 10px;
+        color: #333;
+        text-transform: uppercase;
     }
-    .person.full li {
+    .full li {
         padding: 2px 0;
     }
-    .person .box select {
+    .full .box a {
+        color: #555;
+        display: inherit;
+    }
+     .box select {
         width: 100%;
     }
-    .person .box .report {
+     .box .report {
         margin-top: 10px;
         width: 100%;
     }
-    .person.full h4 {
+    .full h4 {
         border-bottom: 1px solid #eee;
         padding-bottom: 10px;
     }

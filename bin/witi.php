@@ -56,6 +56,13 @@ class Witi {
         return $result[0];
     }
 
+    public static function fetchGadget ($id) {
+        $query = "SELECT * from gadgets WHERE id = '$id'";
+        $result = self::fetch($query);
+
+        return $result[0];
+    }
+
     public static function fetchGadgetsById ($id) {
         $query = 'SELECT * FROM gadgets WHERE personId="' . $id . '"';
         $result = self::fetch($query);

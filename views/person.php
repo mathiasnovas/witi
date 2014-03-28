@@ -26,7 +26,9 @@ $rank = witi::getRank($id);
             <?php if(count($gadgets) > 0) { ?>
             <ul class="gadget arrow-list">
                 <?php foreach ($gadgets as $gadget) { ?>
-                    <li><?php print $gadget['name']; ?></li>   
+                    <li>
+                        <a href="?view=gadget&id=<?php print $gadget['id']; ?>"><?php print $gadget['name']; ?></a>
+                    </li>   
                 <?php } ?>
             </ul>
             <?php } else { ?>

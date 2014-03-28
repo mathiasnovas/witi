@@ -19,24 +19,26 @@ $gadgets = Witi::fetchGadgets();
     </li>
     <?php foreach ($gadgets as $gadget) { ?>
         <li class="col-md-2 col-sm-4 col-xs-6 gadget">
-            <?php if ($gadget['image']) { ?>
-                <figure class="image">
-                    <img src="storage/thumb/<?php print $gadget['image']; ?>" alt="">
-                    <?php $people = Witi::fetchPeopleById($gadget['personId']); ?>
-                    <?php if ($people) { ?>
-                    <div class="people">
-                        <div>
-                            <ul>
-                                <?php foreach ($people as $person) { ?>
-                                    <li><?php print $person['name']; ?></li>
-                                <?php } ?>
-                            </ul>
+            <a href="?view=gadget&id=<?php print $gadget['id']; ?>">
+                <?php if ($gadget['image']) { ?>
+                    <figure class="image">
+                        <img src="storage/thumb/<?php print $gadget['image']; ?>" alt="">
+                        <?php $people = Witi::fetchPeopleById($gadget['personId']); ?>
+                        <?php if ($people) { ?>
+                        <div class="people">
+                            <div>
+                                <ul>
+                                    <?php foreach ($people as $person) { ?>
+                                        <li><?php print $person['name']; ?></li>
+                                    <?php } ?>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <?php }; ?>
-                </figure>
-            <?php } ?>
-            <h3 class="title"><?php print $gadget['name']; ?></h3>
+                        <?php }; ?>
+                    </figure>
+                <?php } ?>
+                <h3 class="title"><?php print $gadget['name']; ?></h3>
+            </a>
         </li>
     <?php } ?>
 </ul>
