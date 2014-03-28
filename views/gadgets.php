@@ -28,7 +28,7 @@ $gadgets = Witi::fetchGadgets();
         </li>
     <?php } ?>
     <li class="col-md-2 col-sm-4 col-xs-6 person add">
-        <a class="add-gadget-trigger">
+        <a class="add-trigger">
             <figure class="image">
                 <img src="img/white_bg.jpg" alt="">
             </figure>

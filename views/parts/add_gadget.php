@@ -1,4 +1,4 @@
-<form class="add-gadget" role="form" action="bin/add.php" type="">
+<form class="add-form" role="form" action="bin/add.php" type="">
     <div class="wrapper">
         <h1>Add new gadget</h1>
         <div class="form-group">
