@@ -1,13 +1,5 @@
 <?php
 
-class Mysql {
-    public static function get () {
-        $db = mysql_connect('localhost', 'root', 'root');
-
-        return mysql_select_db('witi', $db);
-    }
-}
-
 class Witi {
 
     public static function parseUrl ($param) {
