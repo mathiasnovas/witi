@@ -6,6 +6,16 @@ $type   = witi::parseUrl('type');
 ?>
 
 <ul class="people list">
+    <li class="col-md-2 col-sm-4 col-xs-6 add">
+        <a class="add-trigger">
+            <figure class="image">
+                <img src="img/white_bg.jpg" alt="">
+            </figure>
+            <div class="icon-wrapper">
+                <i class="glyphicon glyphicon-plus"></i>
+            </div>
+        </a>
+    </li>        
     <?php foreach ($people as $person) { ?>
         <?php 
             $gadgets = Witi::fetchGadgetsById($person['id']);
@@ -44,16 +54,6 @@ $type   = witi::parseUrl('type');
             </a>
         </li>
     <?php } ?>
-    <li class="col-md-2 col-sm-4 col-xs-6 add">
-        <a class="add-trigger">
-            <figure class="image">
-                <img src="img/white_bg.jpg" alt="">
-            </figure>
-            <div class="icon-wrapper">
-                <i class="glyphicon glyphicon-plus"></i>
-            </div>
-        </a>
-    </li>
 </ul>
 
 <?php require_once 'views/parts/add_person.php'; ?>

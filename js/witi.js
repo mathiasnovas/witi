@@ -24,7 +24,9 @@ jQuery(function ($) {
                     return false;
                 }
 
+
                 var formData = new FormData($(this)[0]);
+                form.find('button').html('Processing...');
 
                 $.ajax({
                     url: 'bin/add.php',
