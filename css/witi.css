@@ -150,6 +150,7 @@ h4, .delta {
     .list .add .image {
         border: 2px solid #0589CD;
         cursor: pointer;
+        transition: .2s;
     }
     .list .add {
         position: relative;
@@ -165,14 +166,20 @@ h4, .delta {
     }
     .list .add i {
         top: 50%;
-		position: absolute;
-		margin-top: -13px;
-		left: 50%;
-		margin-left: -13px;
-		font-size: 26px;
+        position: absolute;
+        margin-top: -13px;
+        left: 50%;
+        margin-left: -13px;
+        font-size: 26px;
         font-size: 1.5em;
         top: 40%;
         transition: .2s;
+    }
+    .list .add:hover i {
+        color: white;
+    }
+    .list .add:hover .image {
+        border: none;
     }
     .list .overlay {
         background: rgba(0,0,0,.6);
@@ -198,6 +205,9 @@ h4, .delta {
         display: table-cell;
         font-weight: normal;
         vertical-align: middle;
+    }
+    .list .add .overlay {
+        background: #0589CD;
     }
 
 header.main {

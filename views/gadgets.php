@@ -9,6 +9,10 @@ $gadgets = Witi::fetchGadgets();
         <a class="add-trigger">
             <figure class="image">
                 <img src="img/white_bg.jpg" alt="">
+                <div class="overlay">
+                    <div class="overlay-wrap">
+                    </div>
+                </div>
             </figure>
             <div class="icon-wrapper">
                 <i class="glyphicon glyphicon-plus"></i>
