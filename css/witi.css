@@ -122,6 +122,9 @@ h4, .delta {
             overflow: hidden;
             text-overflow: ellipsis;
         }
+        .list .people li a {
+        	color: #fff;
+        }
     .list .add .image {
         border: 2px solid #0589CD;
         cursor: pointer;
@@ -135,7 +138,12 @@ h4, .delta {
         left: 0;
     }
     .list .add i {
-        top: 45%;
+        top: 50%;
+		position: absolute;
+		margin-top: -13px;
+		left: 50%;
+		margin-left: -13px;
+		font-size: 26px;
     }
 
 header.main {
