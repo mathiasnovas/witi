@@ -53,6 +53,7 @@ jQuery(function ($) {
     $('.add-trigger').on('click', function (e) {
         e.preventDefault();
         form.addClass('visible');
+        form.find('#name').focus();
         $('body').on('click', closeForm);
     });
 
