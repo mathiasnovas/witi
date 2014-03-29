@@ -18,6 +18,7 @@ $rank = witi::getRank($id);
         <?php } ?>
 
         <h1>#<?php print $rank . ' '; print $person['name']; ?></h1>
+        <h3 class="points"><?php print $person['score']; ?> pts</h3>
     </div>
     <div class="col-sm-3 col-sm-offset-1">
         <div class="box">

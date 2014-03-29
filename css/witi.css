@@ -309,6 +309,10 @@ nav.main a {
         border-bottom: 1px solid #eee;
         padding-bottom: 10px;
     }
+    .full .points {
+        border-top: 1px solid #eee;
+        padding-top: 10px;
+    }
 
 @media (max-width: 768px) {
 	nav.main > div {
