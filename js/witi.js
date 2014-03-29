@@ -30,7 +30,7 @@ jQuery(function ($) {
                 form.find('button').html('Processing...');
 
                 $.ajax({
-                    url: 'bin/add.php',
+                    url: '/bin/add.php',
                     data: formData,
                     processData: false,
                     contentType: false,
@@ -74,7 +74,7 @@ jQuery(function ($) {
             var person = $(this);
 
             $.ajax({
-                url: 'bin/update.php',
+                url: '/bin/update.php',
                 type: 'POST',
                 data: {
                     id: person.closest('li').attr('data-id'),
@@ -100,7 +100,7 @@ jQuery(function ($) {
             });
 
             $.ajax({
-                url: 'bin/update.php',
+                url: '/bin/update.php',
                 type: 'POST',
                 data: {
                     id: assign.closest('.person').attr('data-id'),
@@ -134,7 +134,7 @@ jQuery(function ($) {
             report.html('Processing...');
 
             $.ajax({
-                url: 'bin/update.php',
+                url: '/bin/update.php',
                 type: 'POST',
                 data: {
                     id: report.closest('.person').attr('data-id'),

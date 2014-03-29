@@ -12,8 +12,8 @@ $type = Witi::parseUrl('type');
         <title>Witi</title>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/witi.css">
+        <link rel="stylesheet" href="/css/bootstrap.css">
+        <link rel="stylesheet" href="/css/witi.css">
         <link rel="apple-touch-icon" href="img/bookmark-icon.png" /> 
         <link rel="shortcut icon" href="/img/favicon.ico">
 
@@ -45,7 +45,7 @@ $type = Witi::parseUrl('type');
                         </a>
                     </div>
                     <div class="col-sm-6 col-sx-12">
-                        <a href="/?view=gadgets" class="gadgets-button">
+                        <a href="/gadgets" class="gadgets-button">
                             <i class="glyphicon glyphicon-phone"></i>
                             Gadgets
                         </a>
@@ -60,12 +60,12 @@ $type = Witi::parseUrl('type');
         </div>
 
         <footer>
-            <a href="?view=about">What's Witi?</a>
+            <a href="/about">What's Witi?</a>
         </footer>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="js/bootstrap.js"></script>
-        <script src="js/fastclick.js"></script>
-        <script src="js/witi.js"></script>
+        <script src="/js/bootstrap.js"></script>
+        <script src="/js/fastclick.js"></script>
+        <script src="/js/witi.js"></script>
     </body>
 </html>

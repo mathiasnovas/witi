@@ -342,6 +342,9 @@ nav.main a {
     }
 
 @media (max-width: 768px) {
+    .full .left {
+        margin-bottom: 50px;
+    }
 	nav.main > div {
 		margin-bottom: 20px;
 	}

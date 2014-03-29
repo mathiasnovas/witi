@@ -38,7 +38,7 @@ $type   = witi::parseUrl('type');
             }
         ?>
         <li class="col-md-2 col-sm-4 col-xs-6 person <?php ($hasGadget ? print 'has-gadget' : ''); ?>" data-id="<?php print $id ?>">
-            <a href="?view=person&id=<?php print $id ?>">
+            <a href="people/<?php print $id ?>">
                 <?php if ($person['image']) { ?>
                     <figure class="image">
                         <img src="storage/thumb/<?php print $person['image']; ?>" alt="">

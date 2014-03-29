@@ -23,7 +23,7 @@ $gadgets = Witi::fetchGadgets();
     </li>
     <?php foreach ($gadgets as $gadget) { ?>
         <li class="col-md-2 col-sm-4 col-xs-6 gadget">
-            <a href="?view=gadget&id=<?php print $gadget['id']; ?>">
+            <a href="gadgets/<?php print $gadget['id']; ?>">
                 <?php if ($gadget['image']) { ?>
                     <figure class="image">
                         <img src="storage/thumb/<?php print $gadget['image']; ?>" alt="">

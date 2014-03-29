@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteRule ^people$ index.php?view=people
+RewriteRule ^gadgets$ index.php?view=gadgets
+RewriteRule ^about$ index.php?view=about
+RewriteRule ^gadgets/(.+)$ index.php?view=gadget&id=$1
+RewriteRule ^people/(.+)$ index.php?view=person&id=$1

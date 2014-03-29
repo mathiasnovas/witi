@@ -10,7 +10,7 @@ $person = witi::fetchPeopleById($gadget['personId']);
     <div class="col-sm-4 col-sm-offset-2 left">
         <?php if ($gadget['image']) { ?>
             <figure class="image">
-                <img src="storage/large/<?php print $gadget['image']; ?>" alt="">
+                <img src="/storage/large/<?php print $gadget['image']; ?>" alt="">
             </figure>
         <?php } ?>
 
@@ -20,7 +20,7 @@ $person = witi::fetchPeopleById($gadget['personId']);
         <div class="box">
             <h4>Assignee</h4>
             <?php if (count($person) > 0) { ?>
-                <a href="?view=person&id=<?php print $person[0]['id']; ?>"><?php print $person[0]['name']; ?></a>
+                <a href="/people/<?php print $person[0]['id']; ?>"><?php print $person[0]['name']; ?></a>
             <?php } else { ?>
                 <p>No assignee yet...</p>
             <?php } ?>

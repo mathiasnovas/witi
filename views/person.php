@@ -13,7 +13,7 @@ $rank = witi::getRank($id);
     <div class="col-sm-4 col-sm-offset-2 left">
         <?php if ($person['image']) { ?>
             <figure class="image">
-                <img src="storage/large/<?php print $person['image']; ?>" alt="">
+                <img src="/storage/large/<?php print $person['image']; ?>" alt="">
             </figure>
         <?php } ?>
 
@@ -28,7 +28,7 @@ $rank = witi::getRank($id);
             <ul class="gadget arrow-list">
                 <?php foreach ($gadgets as $gadget) { ?>
                     <li>
-                        <a href="?view=gadget&id=<?php print $gadget['id']; ?>"><?php print $gadget['name']; ?></a>
+                        <a href="/gadgets/<?php print $gadget['id']; ?>"><?php print $gadget['name']; ?></a>
                     </li>   
                 <?php } ?>
             </ul>
