@@ -15,7 +15,7 @@ $type = Witi::parseUrl('type');
         <link rel="stylesheet" href="/css/bootstrap.css">
         <link rel="stylesheet" href="/css/witi.css">
         <link rel="apple-touch-icon" href="img/bookmark-icon.png" /> 
-        <link rel="shortcut icon" href="/img/favicon.png">
+        <link rel="shortcut icon" href="/img/favicon.png@">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -38,16 +38,22 @@ $type = Witi::parseUrl('type');
         <div class="container">
             <?php if (!isset($type)) { ?>
                 <nav class="row main">
-                    <div class="col-sm-6 col-sx-12">
+                    <div class="col-sm-4 col-sx-12">
                         <a href="/" class="people-button">
                             <i class="glyphicon glyphicon-user"></i>
                             People
                         </a>
                     </div>
-                    <div class="col-sm-6 col-sx-12">
+                    <div class="col-sm-4 col-sx-12">
                         <a href="/gadgets" class="gadgets-button">
                             <i class="glyphicon glyphicon-phone"></i>
                             Gadgets
+                        </a>
+                    </div>
+                    <div class="col-sm-4 col-sx-12">
+                        <a href="/leaderboard" class="gadgets-button">
+                            <i class="glyphicon glyphicon-stats"></i>
+                            Leaderboard
                         </a>
                     </div>
                 </nav>
@@ -66,6 +72,7 @@ $type = Witi::parseUrl('type');
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="/js/bootstrap.js"></script>
         <script src="/js/fastclick.js"></script>
+        <script src="/js/chart.js"></script>
         <script src="/js/witi.js"></script>
     </body>
 </html>

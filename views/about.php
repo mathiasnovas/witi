@@ -1,4 +1,4 @@
-<article class="col-lg-9 qa">
+<article class="col-lg-9 qa page">
     <h1 class="title">Witi - Q&A</h1>
     
     <div class="group">

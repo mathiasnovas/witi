@@ -366,3 +366,19 @@ footer {
     .qa .title {
         margin-bottom: 50px;
     }
+
+/* Page */
+.page > .title {
+    margin-top: 0;
+}
+
+/* Leaderboard */
+.leaderboard .list {
+    margin-top: 50px;
+}
+.leaderboard .list li:first-child {
+    /*border: 1px solid red;*/
+}
+.leaderboard canvas {
+    margin-top: 50px;
+}

@@ -33,10 +33,12 @@ class Witi {
         mysql_query($query);
     }
  
-    public static function fetchPeople () {
+    public static function fetchPeople ($order = 'name', $limit = 99) {
         $query = "SELECT * FROM people
-            ORDER BY name
+            ORDER BY $order DESC
+            LIMIT 0, $limit
         ";
+
         $result = self::fetch($query);
 
         return $result;

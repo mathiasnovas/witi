@@ -38,35 +38,7 @@ $type   = witi::parseUrl('type');
             }
         ?>
         <li class="col-md-2 col-sm-4 col-xs-6 person <?php ($hasGadget ? print 'has-gadget' : ''); ?>" data-id="<?php print $id ?>">
-            <a href="people/<?php print $id ?>">
-                <?php if ($person['image']) { ?>
-                    <figure class="image">
-                        <img src="storage/thumb/<?php print $person['image']; ?>" alt="">
-                        <?php if (!isset($type) && $gadgets) { ?>
-                            <div class="gadgets">
-                                <div>
-                                    <ul>
-                                        <?php foreach ($gadgets as $gadget) { ?>
-                                            <li><?php print $gadget['name']; ?></li>     
-                                        <?php } ?>
-                                    </ul>
-                                </div>
-                            </div>
-                        <?php } ?>
-
-                        <?php if (!isset($type)) { ?>
-                            <div class="overlay">
-                                <div class="overlay-wrap">
-                                    <p>View profile</p>
-                                </div>
-                            </div>
-                        <?php } ?>
-                    </figure>
-                <?php } ?>
-
-
-                <h3 class="title">#<?php print $rank . ' '; print $person['name']; ?></h3>
-            </a>
+            <?php include 'views/parts/person.php'; ?>
         </li>
     <?php } ?>
 </ul>

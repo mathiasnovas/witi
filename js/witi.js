@@ -148,4 +148,40 @@ jQuery(function ($) {
             });
         });
     }
+
+    var leaderboard = $('.leaderboard');
+    if (leaderboard.length > 0) {
+        var people = $('.person');
+
+        var ctx = $("#myChart").get(0).getContext("2d");
+        var myNewChart = new Chart(ctx);
+
+        var labels = [],
+            values = [];
+
+        $.each(people, function () {
+            var person = $(this);
+            labels.push(person.find('.title').text());
+            values.push(person.attr('data-score'));
+        });
+
+        var data = {
+            labels : labels,
+            datasets : [
+                {
+                    fillColor : "#eee",
+                    strokeColor : "#0589CD",
+                    pointColor : "fff",
+                    pointStrokeColor : "#000",
+                    data : values
+                }
+            ]
+        }
+
+        var options = {
+            scaleShowLabels : true
+        }
+
+        new Chart(ctx).Line(data, options);
+    }
 });
