@@ -3,5 +3,7 @@ RewriteRule ^people$ index.php?view=people
 RewriteRule ^gadgets$ index.php?view=gadgets
 RewriteRule ^about$ index.php?view=about
 RewriteRule ^leaderboard$ index.php?view=leaderboard
+RewriteRule ^ipad$ index.php?type=1#1
+RewriteRule ^galaxytab$ index.php?type=2#2
 RewriteRule ^gadgets/(.+)$ index.php?view=gadget&id=$1
 RewriteRule ^people/(.+)$ index.php?view=person&id=$1
