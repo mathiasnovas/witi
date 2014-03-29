@@ -50,16 +50,16 @@ $rank = witi::getRank($id);
                 </select>
             </form>
         </div>
-
         <div class="box">
             <h4>Report history</h4>
             
             <?php if (count($reports) > 0) { ?>
                 <ul class="reports arrow-list">
                     <?php foreach ($reports as $report) { ?>
-                        <li>
-                            <span class="date"><?php print $report['date']; ?>:</span>
-                            <?php // print $report['comment']; ?>
+                        <li><?php print $report['date']; ?>
+                            <?php if ($report['comment']) { ?>
+                                <span class="comment"><?php print $report['comment']; ?></span>
+                            <?php } ?>
                         </li>
                     <?php } ?>
                 </ul>

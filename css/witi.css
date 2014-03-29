@@ -314,6 +314,24 @@ nav.main a {
     .box .report-form.visible .report-reason {
         display: block;
     }
+    .box .reports li {
+        cursor: default;
+        position: relative;
+    }
+    .box .reports .comment {
+        background: #0589CD;
+        color: white;
+        display: none;
+        width: 100%;
+        padding: 5px;
+        z-index: 1;
+    }
+    .box .reports li:hover {
+        color: #0589CD;
+    }
+    .box .reports li:hover .comment {
+        display: block;
+    }
     .full h4 {
         border-bottom: 1px solid #eee;
         padding-bottom: 10px;
