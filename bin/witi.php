@@ -154,7 +154,7 @@ class Witi {
         ";
 
         $pQuery = "UPDATE people
-            SET score = score - 5
+            SET score = score - 15
             WHERE id = '$id'
         ";
 
