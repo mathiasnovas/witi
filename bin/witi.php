@@ -146,11 +146,11 @@ class Witi {
         return $result;
     }
 
-    public static function setReport ($id) {
+    public static function setReport ($id, $comment) {
         $date = date('Y-m-d H:i:s');
 
-        $rQuery = "INSERT INTO report (personId, date)
-            VALUES ('$id', '$date')
+        $rQuery = "INSERT INTO report (personId, date, comment)
+            VALUES ('$id', '$date', '$comment')
         ";
 
         $pQuery = "UPDATE people

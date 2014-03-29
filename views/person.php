@@ -57,14 +57,17 @@ $rank = witi::getRank($id);
             <?php if (count($reports) > 0) { ?>
                 <ul class="reports arrow-list">
                     <?php foreach ($reports as $report) { ?>
-                        <li><?php print $report['date']; ?></li>
+                        <li>
+                            <span class="date"><?php print $report['date']; ?>:</span>
+                            <?php // print $report['comment']; ?>
+                        </li>
                     <?php } ?>
                 </ul>
             <?php } else { ?>
                 <p>No reports! :-)</p>
             <?php } ?>
 
-            <button class="btn btn-default report">Report user</button>
+            <?php include 'views/parts/report.php'; ?>
         </div>
     </div>
 </article>

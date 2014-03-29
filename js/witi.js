@@ -117,13 +117,29 @@ jQuery(function ($) {
     // Report user
     var report = $('.report');
     if (report.length > 0) {
-        report.on('click', function () {
+        report.on('click', function (e) {
+            e.preventDefault();
+
+            var form = report.closest('form'),
+                input = form.find('.report-reason');
+
+            form.addClass('visible');
+            report.html('Submit report');
+            input.focus();
+
+            if (!input.val().length > 0) {
+                return false;
+            }
+
+            report.html('Processing...');
+
             $.ajax({
                 url: 'bin/update.php',
                 type: 'POST',
                 data: {
                     id: report.closest('.person').attr('data-id'),
-                    type: 'report'
+                    type: 'report',
+                    comment: input.val()
                 },
                 success: function (data) {
                     location.reload();

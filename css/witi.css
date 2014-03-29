@@ -305,6 +305,15 @@ nav.main a {
         margin-top: 10px;
         width: 100%;
     }
+    .box .date {
+    }
+    .box .report-reason {
+        display: none;
+        margin-top: 25px;
+    }
+    .box .report-form.visible .report-reason {
+        display: block;
+    }
     .full h4 {
         border-bottom: 1px solid #eee;
         padding-bottom: 10px;
