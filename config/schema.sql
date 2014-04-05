@@ -4,9 +4,9 @@
 
 -- CREATE DATABASE IF NOT EXISTS `witi`;
 -- USE `witi`;
-DROP TABLE IF EXISTS `people`;
-DROP TABLE IF EXISTS `gadgets`;
-DROP TABLE IF EXISTS `reports`;
+-- DROP TABLE IF EXISTS `people`;
+-- DROP TABLE IF EXISTS `gadgets`;
+-- DROP TABLE IF EXISTS `report`;
 
 --
 -- People
@@ -38,9 +38,10 @@ CREATE TABLE IF NOT EXISTS `gadgets` (
 -- Reports
 --
 
-CREATE TABLE IF NOT EXISTS `reports` (
+CREATE TABLE IF NOT EXISTS `report` (
 	`id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
 	`personId` INT UNSIGNED NOT NULL,
+	`comment` TEXT NOT NULL,
 	`date` TIMESTAMP NULL DEFAULT NOW(),
 	PRIMARY KEY(`id`)
 );
