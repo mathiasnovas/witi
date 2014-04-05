@@ -18,6 +18,12 @@ class Witi {
         $db = Mysql::get();
 
         $result = mysql_query($query);
+
+        $error = mysql_error();
+        if (!empty($error)) {
+            throw new Exception('Database error: ' . $error);
+        }
+
         $array = array();
 
         while($row = mysql_fetch_assoc($result)) {
@@ -29,10 +35,14 @@ class Witi {
 
     public static function set ($query) {
         $db = Mysql::get();
-
         mysql_query($query);
+
+        $error = mysql_error();
+        if (!empty($error)) {
+            throw new Exception('Database error: ' . $error);
+        }
     }
- 
+
     public static function fetchPeople ($order = 'name', $limit = 99) {
         $query = "SELECT * FROM people
             ORDER BY $order DESC
