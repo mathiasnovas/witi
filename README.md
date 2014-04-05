@@ -27,6 +27,13 @@ Make a copy of the **config/database.sample.php** file and fill it with the corr
 cp config/database.sample.php config/database.php
 ```
 
+Setup storage folders:
+
+```bash
+mkdir storage storage/thumb storage/large
+chmod -R 777 storage
+```
+
 ## License
 
 Copyright 2014 Mathias Novas

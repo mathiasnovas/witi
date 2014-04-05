@@ -5,7 +5,6 @@ require_once 'resize.php';
 
 $type = $_POST['type'];
 
-var_dump($type);
 if ($type == 'person') {
   $firstName = $_POST['name'];
   $imageTmpName = $_FILES['image']['tmp_name'][0];

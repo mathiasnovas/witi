@@ -3,7 +3,11 @@
 class Mysql {
 
     private function __construct() {
-    	$config = include('config/database.php');
+        if (substr(getcwd(), -4) === '/bin') {
+            $config = include('../config/database.php');
+        } else {
+            $config = include('config/database.php');
+        }
         mysql_connect($config['host'], $config['username'], $config['password'])
             or die('Unable to connect to MySQL server on: localhost');
         mysql_select_db($config['database'])
