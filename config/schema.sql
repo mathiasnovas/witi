@@ -1,0 +1,46 @@
+--
+-- Database Setup
+--
+
+-- CREATE DATABASE IF NOT EXISTS `witi`;
+-- USE `witi`;
+DROP TABLE IF EXISTS `people`;
+DROP TABLE IF EXISTS `gadgets`;
+DROP TABLE IF EXISTS `reports`;
+
+--
+-- People
+--
+
+CREATE TABLE IF NOT EXISTS `people` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(255) NOT NULL,
+    `image` VARCHAR(255) NULL,
+    `score` INT UNSIGNED NOT NULL DEFAULT 0,
+    `created` TIMESTAMP NULL DEFAULT NOW(),
+    PRIMARY KEY(`id`)
+);
+
+--
+-- Gadgets
+--
+
+CREATE TABLE IF NOT EXISTS `gadgets` (
+	`id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(255) NOT NULL,
+	`image` VARCHAR(255) NULL,
+	`personId` INT UNSIGNED NULL,
+	`created` TIMESTAMP NULL DEFAULT NOW(),
+	PRIMARY KEY(`id`)
+);
+
+--
+-- Reports
+--
+
+CREATE TABLE IF NOT EXISTS `reports` (
+	`id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`personId` INT UNSIGNED NOT NULL,
+	`date` TIMESTAMP NULL DEFAULT NOW(),
+	PRIMARY KEY(`id`)
+);
