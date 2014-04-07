@@ -9,4 +9,4 @@ config/secrets.json
 public/js/core/models.js
 public/js/core/helpers.js
 storage/*
-bin/mysql.php
+config/database.php
