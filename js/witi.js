@@ -162,7 +162,7 @@ jQuery(function ($) {
         $.each(people, function () {
             var person = $(this);
             labels.push(person.find('.title').text());
-            values.push(person.attr('data-score'));
+	    values.push(parseInt(person.attr('data-score')));
         });
 
         var data = {
@@ -182,6 +182,6 @@ jQuery(function ($) {
             scaleShowLabels : true
         }
 
-        new Chart(ctx).Line(data, options);
+        myNewChart.Line(data, options);
     }
 });
