@@ -1,6 +1,6 @@
 <?php
 
-$people = Witi::fetchPeople('score', 6);
+$people = Witi::fetchPeople('score', 'DESC', 6);
 
 ?>
 
