@@ -43,9 +43,9 @@ class Witi {
         }
     }
 
-    public static function fetchPeople ($order = 'name', $order = 'ASC', $limit = 99) {
+    public static function fetchPeople ($order = 'name', $direction = 'ASC', $limit = 99) {
         $query = "SELECT * FROM people
-            ORDER BY $order ASC
+            ORDER BY $order $direction
             LIMIT 0, $limit
         ";
 
