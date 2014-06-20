@@ -161,6 +161,12 @@ class Witi {
     public static function setReport ($id, $comment) {
         $date = date('Y-m-d H:i:s');
 
+        if (!$comment) {
+            return;
+        }
+
+        $comment = mysqli_real_escape_string($comment);
+
         $rQuery = "INSERT INTO report (personId, date, comment)
             VALUES ('$id', '$date', '$comment')
         ";
