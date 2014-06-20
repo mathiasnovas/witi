@@ -90,6 +90,8 @@ class Witi {
     }
 
     public static function addPerson ($name, $image) {
+        $name = mysqli_real_escape_string($name);
+
         $query = "INSERT INTO people (name, image)
             VALUES ('$name', '$image')
         ";
@@ -98,6 +100,8 @@ class Witi {
     }
 
     public static function addGadget ($name, $image) {
+        $name = mysqli_real_escape_string($name);
+
         $query = "INSERT INTO gadgets (name, image)
             VALUES ('$name', '$image')
         ";
