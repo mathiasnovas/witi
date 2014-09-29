@@ -90,7 +90,8 @@ class Witi {
     }
 
     public static function addPerson ($name, $image) {
-        $name = mysqli_real_escape_string($name);
+        $db = Mysql::get();
+        $name = mysql_real_escape_string($name);
 
         $query = "INSERT INTO people (name, image)
             VALUES ('$name', '$image')
@@ -100,7 +101,8 @@ class Witi {
     }
 
     public static function addGadget ($name, $image) {
-        $name = mysqli_real_escape_string($name);
+        $db = Mysql::get();
+        $name = mysql_real_escape_string($name);
 
         $query = "INSERT INTO gadgets (name, image)
             VALUES ('$name', '$image')
@@ -169,7 +171,8 @@ class Witi {
             return;
         }
 
-        $comment = mysqli_real_escape_string($comment);
+        $db = Mysql::get();
+        $comment = mysql_real_escape_string($comment);
 
         $rQuery = "INSERT INTO report (personId, date, comment)
             VALUES ('$id', '$date', '$comment')
