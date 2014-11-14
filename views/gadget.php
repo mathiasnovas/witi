@@ -3,6 +3,7 @@
 $id = witi::parseUrl('id');
 $gadget = witi::fetchGadget($id);
 $person = witi::fetchPeopleById($gadget['personId']);
+$accessories = witi::fetchAccessories($id);
 
 ?>
 
@@ -25,5 +26,25 @@ $person = witi::fetchPeopleById($gadget['personId']);
                 <p>No assignee yet...</p>
             <?php } ?>
         </div>
+
+        <div class="box">
+            <h4>Accessories</h4>
+
+            <?php if (count($accessories)) { ?>
+                <ul class="accessories">
+                    <?php foreach ($accessories as $accessory) { ?>
+                        <li><?= $accessory['name']; ?></li>
+                    <?php } ?>
+                </ul>
+            <?php } else { ?>
+                <p>This gadget has no accessories yet.</p>
+            <?php } ?>
+
+            <a href="" class="btn btn-default add-trigger">Add accessory</a>
+
+            <p class="accessory-description">It's important that all the accessories <em>always</em> follow the gadget.</p>
+        </div>
     </div>
 </article>
+
+<?php require_once 'views/parts/add_accessory.php'; ?>

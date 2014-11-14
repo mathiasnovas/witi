@@ -11,10 +11,14 @@ if ($type == 'person') {
 } elseif ($type == 'gadget') {
   $gadgetName = $_POST['name'];
   $imageTmpName = $_FILES['image']['tmp_name'][0];
+} elseif ($type === 'accessory') {
+  $accessoryName = $_POST['name'];
+  $gadgetId = $_POST['gadget_id'];
 }
 
+if ($_FILES) {
 //define a maxim size for the uploaded images in Kb
- define ("MAX_SIZE","1000"); 
+ define ("MAX_SIZE","1000");
 
 //This function reads the extension of the file. It is used to determine if the
 // file  is an image by checking the extension.
@@ -26,9 +30,9 @@ if ($type == 'person') {
          return $ext;
  }
 
-//This variable is used as a flag. The value is initialized with 0 (meaning no 
-// error  found)  
-//and it will be changed to 1 if an errro occures.  
+//This variable is used as a flag. The value is initialized with 0 (meaning no
+// error  found)
+//and it will be changed to 1 if an errro occures.
 //If the error occures the file will not be uploaded.
  $errors=0;
 //checks if the form has been submitted
@@ -38,18 +42,18 @@ if ($type == 'person') {
   //if it is not empty
 
 
-  if ($image) 
+  if ($image)
   {
   //get the original name of the file from the clients machine
     $filename = stripslashes($_FILES['image']['name'][0]);
   //get the extension of the file in a lower case format
       $extension = getExtension($filename);
     $extension = strtolower($extension);
-  //if it is not a known extension, we will suppose it is an error and 
-        // will not  upload the file,  
+  //if it is not a known extension, we will suppose it is an error and
+        // will not  upload the file,
   //otherwise we will do more tests
  if (($extension != "jpg") && ($extension != "jpeg") && ($extension !=
- "png") && ($extension != "gif")) 
+ "png") && ($extension != "gif"))
     {
     //print error message
       echo '<h1>Unknown extension!</h1>';
@@ -73,13 +77,13 @@ if ($size > MAX_SIZE*1024)
 $image_name=time().'.'.$extension;
 
 
-//the new name will be containing the full path where will be stored (images 
+//the new name will be containing the full path where will be stored (images
 //folder)
 $newname="../storage/".$image_name;
 
 //we verify if the image has been uploaded, and print error instead
 $copied = copy($imageTmpName, $newname);
-if (!$copied) 
+if (!$copied)
 {
   echo '<h1>Copy unsuccessfull!</h1>';
   $errors=1;
@@ -92,9 +96,12 @@ $thumb->saveImage('../storage/thumb/' . $image_name);
 $large = new resize('../storage/' . $image_name);
 $large->resizeImage(600, 600, 'crop');
 $large->saveImage('../storage/large/' . $image_name);
+}
 
 if ($type == 'person') {
   witi::addPerson($firstName, $image_name);
 } elseif ($type == 'gadget') {
   witi::addGadget($gadgetName, $image_name);
+} elseif ($type == 'accessory') {
+  witi::addAccessory($accessoryName, $gadgetId);
 }

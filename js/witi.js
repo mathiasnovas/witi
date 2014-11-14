@@ -11,18 +11,21 @@ jQuery(function ($) {
             submit: function (e) {
                 e.preventDefault();
 
-                var name = form.find('#name').val().length > 0,
-                    file = form.find('#image').val().length > 0;
+                if (form.find('#image').length > 0) {
+                    console.log('yes');
+                    var name = form.find('#name').val().length > 0,
+                        file = form.find('#image').val().length > 0;
 
-                if (!name || !file) {
-                    if (!file) {
-                        form.find('#image').addClass('required');
-                    }
-                    if (!name) {
-                        form.find('#name').addClass('required');
-                    }
+                    if (!name || !file) {
+                        if (!file) {
+                            form.find('#image').addClass('required');
+                        }
+                        if (!name) {
+                            form.find('#name').addClass('required');
+                        }
 
-                    return false;
+                        return false;
+                    }
                 }
 
 
@@ -44,7 +47,7 @@ jQuery(function ($) {
                         console.log(error);
                     },
                 });
-                
+
             }
         }).find('[name="rotation"]').val(orientation);
     }
@@ -52,6 +55,7 @@ jQuery(function ($) {
     // Toggle form
     $('.add-trigger').on('click', function (e) {
         e.preventDefault();
+
         form.addClass('visible');
         form.find('#name').focus();
         $('body').on('click', closeForm);
@@ -60,7 +64,7 @@ jQuery(function ($) {
     var closeForm = function (e) {
         var formTrigger = $('.add-trigger');
 
-        if (!form.has($(e.target)).length > 0 && !formTrigger.has($(e.target)).length > 0) {
+        if (!form.has($(e.target)).length > 0 && !formTrigger.has($(e.target)).length > 0 && !formTrigger.is($(e.target))) {
             form.removeClass('visible');
         }
     }

@@ -111,6 +111,24 @@ class Witi {
         self::set($query);
     }
 
+    public static function addAccessory ($name, $gadget_id) {
+        $db = Mysql::get();
+        $name = mysql_real_escape_string($name);
+
+        $query = "INSERT INTO accessories (name, gadget_id)
+            VALUES ('$name', '$gadget_id')
+        ";
+
+        self::set($query);
+    }
+
+    public static function fetchAccessories($gadget_id) {
+        $query = "SELECT * FROM accessories WHERE gadget_id = '$gadget_id'";
+        $result = self::fetch($query);
+
+        return $result;
+    }
+
     public static function updatePerson ($id, $gadgetId) {
 
         $gadgets = self::fetchGadgetsById($id);
