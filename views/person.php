@@ -22,7 +22,7 @@ $rank = witi::getRank($id);
     </div>
     <div class="col-sm-3 col-sm-offset-1">
         <div class="box">
-            <h4>In posession of</h4>
+            <h4>In possession of</h4>
             
             <?php if(count($gadgets) > 0) { ?>
             <ul class="gadget arrow-list">
