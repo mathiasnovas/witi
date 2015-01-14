@@ -173,7 +173,7 @@ jQuery(function ($) {
             labels : labels,
             datasets : [
                 {
-                    fillColor : "#eee",
+                    fillColor : "#0589CD",
                     strokeColor : "#0589CD",
                     pointColor : "fff",
                     pointStrokeColor : "#000",
@@ -186,6 +186,6 @@ jQuery(function ($) {
             scaleShowLabels : true
         }
 
-        myNewChart.Line(data, options);
+        myNewChart.Bar(data, options);
     }
 });
