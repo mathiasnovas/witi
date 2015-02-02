@@ -36,4 +36,6 @@ chmod -R 777 storage
 
 ## License
 
-Copyright 2014 Mathias Novas
+The MIT License
+
+Copyright (c) 2014-2015 07 Interaktiv. http://07.no
