@@ -332,6 +332,11 @@ nav.main a {
     .box .reports li:hover .comment {
         display: block;
     }
+    .box .log li {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
     .full h4 {
         border-bottom: 1px solid #eee;
         padding-bottom: 10px;

@@ -6,6 +6,7 @@ $gadgets = witi::fetchGadgetsById($id);
 $allGadgets = witi::fetchGadgets();
 $reports = witi::getReports($id);
 $rank = witi::getRank($id);
+$log = witi::getLog($id);
 
 ?>
 
@@ -23,13 +24,13 @@ $rank = witi::getRank($id);
     <div class="col-sm-3 col-sm-offset-1">
         <div class="box">
             <h4>In possession of</h4>
-            
+
             <?php if(count($gadgets) > 0) { ?>
             <ul class="gadget arrow-list">
                 <?php foreach ($gadgets as $gadget) { ?>
                     <li>
                         <a href="/gadgets/<?php print $gadget['id']; ?>"><?php print $gadget['name']; ?></a>
-                    </li>   
+                    </li>
                 <?php } ?>
             </ul>
             <?php } else { ?>
@@ -38,7 +39,7 @@ $rank = witi::getRank($id);
         </div>
         <div class="box">
             <h4>Assign</h4>
-            
+
             <form class="">
                 <select class="assign">
                     <option value="">Select gadget</option>
@@ -50,9 +51,23 @@ $rank = witi::getRank($id);
                 </select>
             </form>
         </div>
+        <?php if (count($log) > 0) { ?>
+            <div class="box">
+                <h4>Posession history</h4>
+
+                    <ul class="log arrow-list">
+                        <?php foreach ($log as $entry) { ?>
+                            <?php
+                            $gadget = witi::fetchGadget($entry['gadgetId']);
+                            ?>
+                            <li title="<?= $gadget['name']; ?>"><?= $entry['date'] ?> - <?= $gadget['name'] ?></li>
+                        <?php } ?>
+                    </ul>
+            </div>
+        <?php } ?>
         <div class="box">
             <h4>Report history</h4>
-            
+
             <?php if (count($reports) > 0) { ?>
                 <ul class="reports arrow-list">
                     <?php foreach ($reports as $report) { ?>

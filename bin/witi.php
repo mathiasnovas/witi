@@ -130,10 +130,8 @@ class Witi {
     }
 
     public static function updatePerson ($id, $gadgetId) {
-
         $gadgets = self::fetchGadgetsById($id);
         $continue = true;
-
 
         if (count($gadgets) > 0) {
             foreach ($gadgets as $gadget) {
@@ -161,6 +159,8 @@ class Witi {
 
         self::set($gQuery);
         self::set($pQuery);
+
+        self::setLog($id, $gadgetId);
     }
 
     public static function wipePeople ($id) {
@@ -222,6 +222,27 @@ class Witi {
         }
 
         return $rank;
+    }
+
+    public static function setLog($personId, $gadgetId) {
+        $date = date('Y-m-d H:i:s');
+
+        $query = "INSERT INTO log (personId, gadgetId, date)
+            VALUES ('$personId', '$gadgetId', '$date')
+        ";
+
+        self::set($query);
+    }
+
+    public static function getLog($personId) {
+        $query = "SELECT * FROM log
+            WHERE personId = '$personId'
+            LIMIT 5
+        ";
+
+        $result = self::fetch($query);
+
+        return $result;
     }
 
 }
