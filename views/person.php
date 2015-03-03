@@ -53,7 +53,7 @@ $log = witi::getLog($id);
         </div>
         <?php if (count($log) > 0) { ?>
             <div class="box">
-                <h4>Posession history</h4>
+                <h4>Possession history</h4>
 
                     <ul class="log arrow-list">
                         <?php foreach ($log as $entry) { ?>
