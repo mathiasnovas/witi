@@ -237,6 +237,7 @@ class Witi {
     public static function getLog($personId) {
         $query = "SELECT * FROM log
             WHERE personId = '$personId'
+            ORDER BY id DESC
             LIMIT 5
         ";
 
