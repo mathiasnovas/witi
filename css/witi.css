@@ -407,9 +407,13 @@ footer {
         margin-top: 20px;
     }
     .stream .stream-item {
-        border-bottom: 1px solid #fafafa;
+        border-bottom: 1px solid #EEEEEE;
         margin: 10px 0;
+        padding-bottom: 10px;
         overflow: hidden;
+    }
+    .stream .stream-item:last-child {
+        border-bottom: none;
     }
     .stream .image {
         float: left;
