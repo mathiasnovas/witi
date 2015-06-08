@@ -7,7 +7,7 @@
 
             <?php
                 $person = witi::fetchPerson($streamItem['personId']);
-                $gadet = witi::fetchGadget($streamItem['gadgetId']);
+                $gadget = witi::fetchGadget($streamItem['gadgetId']);
             ?>
 
             <li class="stream-item">
