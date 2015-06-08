@@ -398,3 +398,23 @@ footer {
         display: none;
     }
 }
+
+/* Stream */
+.stream {
+    clear: both;
+}
+    .stream .stream-list {
+        margin-top: 20px;
+    }
+    .stream .stream-item {
+        border-bottom: 1px solid #fafafa;
+        margin: 10px 0;
+        overflow: hidden;
+    }
+    .stream .image {
+        float: left;
+        margin-right: 20px;
+    }
+    .stream img {
+        height: 50px;
+    }

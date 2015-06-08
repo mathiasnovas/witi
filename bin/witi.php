@@ -246,4 +246,12 @@ class Witi {
         return $result;
     }
 
+    public static function fetchStream() {
+        $query = "SELECT * FROM log ORDER BY date DESC LIMIT 5";
+
+        $result = self::fetch($query);
+
+        return $result;
+    }
+
 }

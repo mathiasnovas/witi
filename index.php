@@ -1,8 +1,10 @@
-<?php 
-require_once 'bin/witi.php'; 
+<?php
+require_once 'bin/witi.php';
 
 $view = (Witi::parseUrl('view') ? Witi::parseUrl('view') : 'people');
 $type = Witi::parseUrl('type');
+
+$stream = Witi::fetchStream();
 
 ?>
 <!doctype html>
@@ -61,6 +63,10 @@ $type = Witi::parseUrl('type');
 
             <div class="row">
                 <?php include 'views/' . $view . '.php'; ?>
+
+                <?php if ($view === 'people') { ?>
+                    <?php require_once 'views/parts/stream.php'; ?>
+                <?php } ?>
             </div>
 
         </div>
