@@ -405,6 +405,8 @@ footer {
 }
     .stream .stream-list {
         margin-top: 20px;
+        background: #fafafa;
+        padding: 20px;
     }
     .stream .stream-item {
         border-bottom: 1px solid #EEEEEE;
