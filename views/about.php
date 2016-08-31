@@ -3,7 +3,7 @@
     
     <div class="group">
         <p>Q: What is Witi?</p>
-        <p>A: Witi is a sensational tool for keeping track our in-house gadgets and devices.</p>
+        <p>A: Witi is a sensational tool for keeping track of our in-house gadgets and devices.</p>
     </div>
 
     <div class="group">
